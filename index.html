@@ -1,279 +1,230 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gianfranco Reyes | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Gianfranco Reyes Portfolio</title>
+    <meta name="description"
+        content="Portfolio de Gianfranco Reyes, Desarrollador Full Stack especializado en Angular, Node.js y bases de datos.">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
 
-<style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
 
-/* ===== GLOBAL ===== */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0b1120;
-  color: white;
-}
-
-section {
-  padding: 80px 10%;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== NAVBAR ===== */
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  background: rgba(7,16,43,0.95);
-  backdrop-filter: blur(8px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10%;
-  z-index: 1000;
-}
-
-nav .links {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #38bdf8;
-}
-
-/* ===== HAMBURGER ===== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  height: 3px;
-  width: 25px;
-  background: white;
-  margin: 4px 0;
-}
-
-/* ===== HERO ===== */
-.hero {
-  padding-top: 160px;
-  text-align: center;
-  animation: fadeIn 1.5s ease forwards;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-}
-
-.hero p {
-  color: #a0aec0;
-  font-size: 1.2rem;
-}
-
-/* ===== TITLES ===== */
-.section-title {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 20px;
-}
-
-/* ===== CARDS ===== */
-.card {
-  background: #0f1a3a;
-  padding: 30px;
-  border-radius: 12px;
-  margin-bottom: 30px;
-  transition: 0.4s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-
-/* ===== TECH TAGS ===== */
-.tech {
-  display: inline-block;
-  background: #38bdf8;
-  color: black;
-  padding: 6px 12px;
-  margin: 5px;
-  border-radius: 6px;
-  font-size: 0.8rem;
-  transition: 0.3s;
-}
-
-.tech:hover {
-  background: white;
-  transform: scale(1.05);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px 10%;
-  background: #07102b;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  nav .links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #07102b;
-    flex-direction: column;
-    width: 200px;
-    display: none;
-    padding: 20px;
-  }
-
-  nav .links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-</style>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+    <div id="canvas-container"></div>
 
-<!-- ===== NAV ===== -->
-<nav>
-  <div><strong>GR</strong></div>
+    <header class="glass-header">
+        <nav>
+            <div class="logo">GR<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#education">Educación</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-  <div class="links">
-    <a href="#about">Sobre Mí</a>
-    <a href="#skills">Habilidades</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#contact">Contacto</a>
-    <a href="https://github.com/greyes212" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/gianfranco-reyes-alvarez-a38480164/" target="_blank">LinkedIn</a>
-  </div>
+    <main>
 
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</nav>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <p class="greeting">Hola, soy</p>
+                <h1 class="glitch" data-text="Gianfranco Reyes">Gianfranco Reyes</h1>
+                <h2 class="subtitle">Desarrollador Full-Stack</h2>
+                <p class="description">
+                    Construyendo soluciones web escalables con Angular, Node.js y bases de datos relacionales.
+                    Madrid, España.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn primary">Ver Proyectos</a>
+                    <a href="#contact" class="btn secondary">Contáctame</a>
+                </div>
+            </div>
+        </section>
 
-<!-- ===== HERO ===== -->
-<header class="hero">
-  <h1>Hola, soy <strong>Gianfranco Reyes</strong></h1>
-  <p>Desarrollador Full Stack | Angular · Node.js · Bases de Datos</p>
-</header>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Mí</h2>
+                <p>
+                    Desarrollador Full Stack con experiencia en desarrollo web y móvil.
+                    Especializado en Angular, Node.js y diseño avanzado de bases de datos.
+                    He desarrollado sistemas completos desde cero, incluyendo arquitectura,
+                    modelado relacional, triggers y sistemas de métricas automatizadas.
+                </p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i> Madrid, España
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i> gianfrancoreyes21@gmail.com
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i> +34 642412123
+                </div>
+            </div>
+        </section>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <h2 class="section-title">Sobre Mí</h2>
-  <div class="card">
-    <p>
-      Desarrollador Full Stack con experiencia en desarrollo web real,
-      arquitectura escalable y diseño avanzado de bases de datos.
-      Me especializo en Angular, Node.js y sistemas complejos con métricas automatizadas.
-    </p>
-  </div>
-</section>
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Arsenal Técnico</h2>
 
-<!-- ===== SKILLS ===== -->
-<section id="skills">
-  <h2 class="section-title">Habilidades</h2>
-  <div class="card">
-    <span class="tech">Angular</span>
-    <span class="tech">Node.js</span>
-    <span class="tech">Java</span>
-    <span class="tech">Spring Boot</span>
-    <span class="tech">MySQL</span>
-    <span class="tech">PostgreSQL</span>
-    <span class="tech">Python</span>
-    <span class="tech">PHP</span>
-    <span class="tech">Hibernate</span>
-  </div>
-</section>
+                <h3><i class="fas fa-code"></i> Programación</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">Java</div>
+                    <div class="skill-card">JavaScript</div>
+                    <div class="skill-card">TypeScript</div>
+                    <div class="skill-card">Python</div>
+                    <div class="skill-card">PHP</div>
+                    <div class="skill-card">SQL</div>
+                </div>
 
-<!-- ===== PROJECTS ===== -->
-<section id="projects">
-  <h2 class="section-title">Proyectos</h2>
+                <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">MySQL</div>
+                    <div class="skill-card">PostgreSQL</div>
+                </div>
 
-  <div class="card">
-    <h3>Simuladores Educativos</h3>
-    <p>Aplicación web para personas mayores con métricas automáticas y sistema de roles.</p>
-  </div>
+                <h3><i class="fas fa-laptop-code"></i> Desarrollo</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">Angular</div>
+                    <div class="skill-card">Node.js</div>
+                    <div class="skill-card">Express</div>
+                    <div class="skill-card">Android Studio</div>
+                    <div class="skill-card">HTML/CSS</div>
+                </div>
 
-  <div class="card">
-    <h3>ITVision – TFG</h3>
-    <p>Aplicación web para gestión de ITV con arquitectura en tres capas y generación de informes PDF.</p>
-  </div>
-</section>
+                <h3><i class="fas fa-server"></i> Sistemas</h3>
+                <div class="skills-grid">
+                    <div class="skill-card">Linux</div>
+                    <div class="skill-card">Windows Server</div>
+                    <div class="skill-card">Redes TCP/UDP</div>
+                </div>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <h2 class="section-title">Contacto</h2>
-  <div class="card">
-    <p>Email: gianfrancoreyes21@gmail.com</p>
-    <p>Teléfono: +34 642412123</p>
-    <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/gianfranco-reyes-alvarez-a38480164/" style="color:#38bdf8;">linkedin</a></strong></p>
-  </div>
-</section>
+            </div>
+        </section>
 
-<footer>
-  <p>© 2026 Gianfranco Reyes</p>
-</footer>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experiencia</h2>
 
-<script>
+                <div class="timeline-item">
+                    <div class="timeline-date">Abril 2024 – Septiembre 2024</div>
+                    <div class="timeline-content glass-card">
+                        <h3>Técnico Informático / Desarrollador</h3>
+                        <h4>Fundación Esplai – Madrid</h4>
+                        <ul>
+                            <li>Desarrollo desde cero de una base de datos en MySQL compartida entre web y app móvil.
+                            </li>
+                            <li>Diseño completo de wireframes para la aplicación móvil.</li>
+                            <li>Desarrollo frontend con Angular y backend con TypeScript.</li>
+                            <li>Uso de Android Studio para versión móvil.</li>
+                        </ul>
+                    </div>
+                </div>
 
-/* ===== MENU HAMBURGUESA ===== */
-function toggleMenu() {
-  document.querySelector('.links').classList.toggle('active');
-}
+            </div>
+        </section>
 
-/* ===== ANIMACIÓN AL HACER SCROLL ===== */
-const sections = document.querySelectorAll("section");
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const position = sec.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-    if(position < screenPosition){
-      sec.classList.add("visible");
-    }
-  });
-});
+                <div class="project-card glass-card">
+                    <h3>Simuladores Educativos</h3>
+                    <p>
+                        Aplicación web para personas mayores donde practicar transacciones bancarias
+                        y compras online. Incluye sistema de roles y métricas automáticas mediante triggers SQL.
+                    </p>
+                    <div class="project-tech">
+                        <span>Angular</span>
+                        <span>Node.js</span>
+                        <span>MySQL</span>
+                        <span>Triggers SQL</span>
+                    </div>
+                </div>
 
-</script>
+                <div class="project-card glass-card">
+                    <h3>ITVision – TFG</h3>
+                    <p>
+                        Aplicación web para modernizar la gestión de ITV con arquitectura en tres capas,
+                        generación automática de informes PDF y autenticación segura.
+                    </p>
+                    <div class="project-tech">
+                        <span>Angular</span>
+                        <span>Node.js</span>
+                        <span>PostgreSQL</span>
+                        <span>Sequelize</span>
+                    </div>
+                </div>
 
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Educación</h2>
+
+                <div class="edu-card glass-card">
+                    <h3>Grado Superior Desarrollo de Aplicaciones Web</h3>
+                </div>
+
+                <div class="edu-card glass-card">
+                    <h3>Grado Superior Desarrollo de Aplicaciones Multiplataforma</h3>
+                </div>
+
+                <div class="edu-card glass-card">
+                    <h3>Grado Medio Sistemas Microinformáticos y Redes</h3>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i> +34 642412123
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> gianfrancoreyes21@gmail.com
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/gianfranco-reyes-alvarez-a38480164/" target="_blank">
+                        LinkedIn
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/greyes212" target="_blank">
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Gianfranco Reyes. Desarrollador Full Stack.</p>
+        </footer>
+
+    </main>
 </body>
-</html>
