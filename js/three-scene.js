@@ -1,6 +1,7 @@
 // Three.js is now loaded globally via CDN in index.html to support file:// protocol
 // import * as THREE from 'https://esm.sh/three@0.160.0';
 
+import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
 const container = document.getElementById('canvas-container');
 
 // Scene setup
