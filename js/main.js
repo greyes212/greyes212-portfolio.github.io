@@ -209,8 +209,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateContent() {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            if (translations[currentLang] && translations[currentLang][key]) {
-                element.innerHTML = translations[currentLang][key];
+            const translation = translations[currentLang][key];
+
+            if (!translation) return;
+
+            // Si el texto contiene HTML (ej: <li>)
+            if (translation.includes("<")) {
+                element.innerHTML = translation;
+            } else {
+                element.textContent = translation;
             }
         });
 
