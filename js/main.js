@@ -78,7 +78,7 @@ const translations = {
         "skills_systems": "Sistemas",
         "skills_devops": "Cloud & DevOps",
         "exp_title": "Experiencia",
-        "exp_1_role": "Técnico Informático / Desarrollador",
+        "exp_1_role": "Técnico Informático /Desarrollador",
         "exp_1_company": "Fundación Esplai – Madrid",
         "exp_1_desc": "<li>Desarrollo desde cero de una base de datos en MySQL compartida entre web y appmóvil.</li><li>Diseño completo de wireframes para la aplicación móvil y escritorio.</li><li>Desarrollo frontend con Angular y backend con TypeScript.</li><li>Uso de Android Studio para versión móvil.</li>",
         "edu_title": "Educación",
