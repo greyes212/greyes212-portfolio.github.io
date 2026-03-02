@@ -907,3 +907,10 @@ footer {
     border: 1px solid var(--primary-color);
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
 }
+
+.cv-btn {
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
