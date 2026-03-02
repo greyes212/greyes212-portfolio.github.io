@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillObserver.unobserve(skillSection);
             }
         });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.05 });
 
     skillObserver.observe(skillSection);
 
