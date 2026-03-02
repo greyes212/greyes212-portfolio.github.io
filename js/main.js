@@ -207,30 +207,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateContent() {
-        document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            const translation = translations[currentLang][key];
 
-            if (!translation) return;
+        const elements = document.querySelectorAll('[data-i18n]');
 
-            // Si el texto contiene HTML (ej: <li>)
-            if (translation.includes("<")) {
-                element.innerHTML = translation;
-            } else {
-                element.textContent = translation;
-            }
+        // 1️⃣ Fade + Blur OUT
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('lang-transition');
+            }, index * 30); // micro delay en cascada
         });
 
-        // Update HTML lang attribute
-        document.documentElement.lang = currentLang;
+        // ⏳ Delay principal (0.6s)
+        setTimeout(() => {
 
-        // Reload news to update "Read More" text if needed
-        // But news content is dynamic, so we might need to re-render it or update it in place.
-        // For simplicity, we can re-call loadNews() or just update the static parts.
-        // The news items themselves (title/desc) are from JSON and might not be translated unless JSON has multiple langs.
-        // The "Read More" text IS translated in the template literal in loadNews.
-        // So let's re-render news.
+            elements.forEach((el, index) => {
 
+                const key = el.getAttribute('data-i18n');
+                const translation = translations[currentLang][key];
+                if (!translation) return;
+
+                // Cambiar texto
+                if (translation.includes("<")) {
+                    el.innerHTML = translation;
+                } else {
+                    el.textContent = translation;
+                }
+
+                // Guardar texto para glitch
+                el.setAttribute("data-text", el.textContent);
+
+                // Aplicar glitch
+                el.classList.add("lang-glitch");
+
+                // Micro-delay cascada entrada
+                setTimeout(() => {
+                    el.classList.remove('lang-transition');
+                    el.classList.add('lang-show');
+                }, index * 40);
+
+                // Quitar glitch
+                setTimeout(() => {
+                    el.classList.remove("lang-glitch");
+                }, 400);
+
+            });
+
+            document.documentElement.lang = currentLang;
+
+        }, 600); // delay principal aumentado
     }
 
     const demoButtons = document.querySelectorAll(".demo-btn");

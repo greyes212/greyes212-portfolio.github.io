@@ -914,3 +914,75 @@ footer {
     align-items: center;
     gap: 8px;
 }
+
+/* Language Change Animation */
+.lang-fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.lang-fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* =========================
+   Language Premium Animation
+========================= */
+
+.lang-transition {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(15px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.lang-show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Matrix glitch flash */
+.lang-glitch {
+    position: relative;
+}
+
+.lang-glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    top: 0;
+    width: 100%;
+    color: #00ff9d;
+    opacity: 0.6;
+    animation: glitchFlash 0.4s ease;
+}
+
+@keyframes glitchFlash {
+    0% {
+        clip-path: inset(0 0 80% 0);
+    }
+
+    25% {
+        clip-path: inset(20% 0 40% 0);
+    }
+
+    50% {
+        clip-path: inset(60% 0 10% 0);
+    }
+
+    75% {
+        clip-path: inset(10% 0 70% 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+        opacity: 0;
+    }
+}
