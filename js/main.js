@@ -47,6 +47,8 @@ const translations = {
         "proj_2_title": "ITVision",
         "proj_2_subtitle": "Web Application to Simplify Vehicle Inspection (ITV)",
         "proj_2_desc": "ITVision is a web application developed to modernize the management of Vehicle Technical Inspection (ITV) stations, replacing traditional desktop systems with an accessible, scalable, and centralized web solution.",
+        "btn_view_demo": "View Demo",
+        "btn_hide_demo": "Hide Demo",
         "contact_title": "Contact",
         "footer_text": "© 2026 Gianfranco Reyes."
     },
@@ -97,6 +99,8 @@ const translations = {
         "proj_2_title": "ITVision",
         "proj_2_subtitle": "Aplicación web para simplificar la ITV",
         "proj_2_desc": "ITVision es una aplicación web desarrollada para modernizar la gestión de estaciones de Inspección Técnica de Vehículos (ITV), reemplazando sistemas de escritorio tradicionales por una solución web accesible, escalable y centralizada.",
+        "btn_view_demo": "Ver Demo",
+        "btn_hide_demo": "Ocultar Demo",
         "contact_title": "Contacto",
         "footer_text": "&copy; 2026 Gianfranco Reyes."
     }
