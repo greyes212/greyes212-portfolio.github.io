@@ -934,9 +934,8 @@ footer {
 
 
 .demo-btn {
-    margin-top: 1.5rem;
-    align-self: flex-start;
-    margin-top: 25px;
+    margin-top: 2rem;
+    display: inline-block;
 }
 
 .demo-container {
@@ -1501,4 +1500,9 @@ body:not(.dark-mode) .scroll-top {
             0 0 40px #00f7ff;
         transform: scale(1.08);
     }
+}
+
+.btn,
+.instructions-btn {
+    cursor: pointer;
 }

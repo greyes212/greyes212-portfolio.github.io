@@ -33,6 +33,7 @@ const translations = {
         "skills_systems": "Systems",
         "skills_devops": "Cloud & DevOps",
         "skills_ai": "Artificial Intelligence",
+        "boton-proyecto": "View Project",
         "exp_title": "Experience",
         "exp_1_role": "IT Technician / Developer",
         "exp_1_company": "Fundación Esplai – Madrid",
@@ -91,6 +92,7 @@ const translations = {
         "skills_systems": "Sistemas",
         "skills_devops": "Cloud & DevOps",
         "skills_ai": "Inteligencia Artificial",
+        "boton-proyecto": "Ver Proyecto",
         "exp_title": "Experiencia",
         "exp_1_role": "Técnico Informático / Desarrollador",
         "exp_1_company": "Fundación Esplai – Madrid",
@@ -309,6 +311,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 200);
             }
         });
+    });
+    /* 🔹 BOTÓN DE INSTRUCCIONES */
+    document.querySelectorAll(".instructions-btn").forEach(btn => {
+
+        btn.addEventListener("click", () => {
+
+            const target = document.getElementById(btn.dataset.target);
+
+            if (target) {
+                target.classList.toggle("active");
+            }
+
+        });
+
     });
 
     const toggle = document.getElementById("themeToggle");
